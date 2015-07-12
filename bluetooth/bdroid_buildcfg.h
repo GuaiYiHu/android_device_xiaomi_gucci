@@ -24,5 +24,5 @@
 #define MAX_ACL_CONNECTIONS    7
 #define MAX_L2CAP_CHANNELS    16
 // skips conn update at conn completion
-#define BTA_BLE_SKIP_CONN_UPD  TRUE
+#define BTA_BLE_SKIP_CONN_UPD  FALSE
 #endif
