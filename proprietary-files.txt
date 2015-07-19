@@ -242,6 +242,7 @@ vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libxml.so
 
 # Sensors
+bin/SensorCali
 lib/hw/sensors.msm8916.so
 vendor/lib/libcalmodule_akm.so
 vendor/lib/libcalmodule_yamaha.so
