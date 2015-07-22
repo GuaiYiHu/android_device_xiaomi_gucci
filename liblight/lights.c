@@ -195,7 +195,7 @@ handle_speaker_light_locked(struct light_device_t *dev)
 }
 
 static int
-set_light_backlight(struct light_device_t *dev,
+set_light_backlight(__attribute__ ((unused)) struct light_device_t *dev,
         const struct light_state_t *state)
 {
     int err = 0;
