@@ -37,6 +37,7 @@ on early-init
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
+
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
@@ -281,11 +282,6 @@ on boot
 
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
-
-    chown system system /sys/class/compass/akm09911/shipmenttest
-    chown 0774 /sys/class/compass/akm09911/shipmenttest
-    chown system system /sys/class/sensors/yas537-mag/yas_self_test
-    chown 0774 /sys/class/sensors/yas537-mag/yas_self_test
 
     # LEDs
     chown system system /sys/class/leds/blue/brightness
@@ -581,9 +577,6 @@ service audiod /system/bin/audiod
    class late_start
    user system
    group system
-
-on charger
-   write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ondemand
 
 service ppd /system/bin/mm-pp-daemon
     class late_start
