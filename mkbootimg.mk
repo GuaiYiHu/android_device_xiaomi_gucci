@@ -1,22 +1,28 @@
 LOCAL_PATH := $(call my-dir)
 
-DTBTOOL := $(LOCAL_PATH)/mkbootimg_dtb
-KERNEL := $(LOCAL_PATH)/kernel
-DTB := $(LOCAL_PATH)/dt.img
+## Build and run dtbtool
+DTBTOOL := $(HOST_OUT_EXECUTABLES)/dtbToolCM$(HOST_EXECUTABLE_SUFFIX)
+INSTALLED_DTIMAGE_TARGET := $(PRODUCT_OUT)/dt.img
 
-INSTALLED_BOOTIMAGE_TARGET := $(PRODUCT_OUT)/boot.img
-INSTALLED_RECOVERYIMAGE_TARGET := $(PRODUCT_OUT)/recovery.img
+
+$(INSTALLED_DTIMAGE_TARGET): $(DTBTOOL) $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr $(INSTALLED_KERNEL_TARGET)
+	$(call pretty,"Target dt image: $(INSTALLED_DTIMAGE_TARGET)")
+	$(hide) $(DTBTOOL) -2 -o $(INSTALLED_DTIMAGE_TARGET) -s $(BOARD_KERNEL_PAGESIZE) -p $(KERNEL_OUT)/scripts/dtc/ $(KERNEL_OUT)/arch/arm/boot/dts/
+	@echo -e ${CL_CYN}"Made DT image: $@"${CL_RST}
+
 
 ## Overload bootimg generation: Same as the original, + --dt arg
-$(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES)
-	@echo ----- Made boot image -------- $@
-	$(hide) $(DTBTOOL) --kernel $(KERNEL) --ramdisk $(PRODUCT_OUT)/ramdisk.img --cmdline "$(BOARD_KERNEL_CMDLINE)" --base $(BOARD_KERNEL_BASE) --offset 0x01000000 --dt $(DTB) --pagesize 2048 --tags-addr 0x00000100 -o $(INSTALLED_BOOTIMAGE_TARGET)
+$(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(INSTALLED_DTIMAGE_TARGET)
+	$(call pretty,"Target boot image: $@")
+	$(hide) $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) --dt $(INSTALLED_DTIMAGE_TARGET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --output $@
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_BOOTIMAGE_PARTITION_SIZE),raw)
-	@echo ----- Added DTB ------------------ $@
+	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
 
-$(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
-	$(recovery_ramdisk) \
-	$(recovery_kernel)
-	@echo ----- Made recovery image -------- $@
-	$(hide) $(DTBTOOL) --kernel $(KERNEL) --ramdisk $(PRODUCT_OUT)/ramdisk-recovery.img --cmdline "ramoops_memreserve=2M androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci" --base 0x80000000 --offset 0x01000000 --dt $(DTB) --pagesize 2048 --tags-addr 0x00000100 -o $(PRODUCT_OUT)/recovery.img
-	@echo ----- Added DTB ------------------ $@
+## Overload recoveryimg generation: Same as the original, + --dt arg
+$(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(INSTALLED_DTIMAGE_TARGET) \
+		$(recovery_ramdisk) \
+		$(recovery_kernel)
+	@echo -e ${CL_CYN}"----- Making recovery image ------"${CL_RST}
+	$(hide) $(MKBOOTIMG) $(INTERNAL_RECOVERYIMAGE_ARGS) --dt $(INSTALLED_DTIMAGE_TARGET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --output $@
+	$(hide) $(call assert-max-image-size,$@,$(BOARD_RECOVERYIMAGE_PARTITION_SIZE),raw)
+	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
