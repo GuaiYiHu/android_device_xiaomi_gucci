@@ -71,7 +71,6 @@ on fs
 
 # msm specific files that need to be created on /data
 on post-fs-data
-
     mkdir /data/media 0770 media_rw media_rw
     restorecon_recursive /data/media
 
@@ -315,10 +314,6 @@ on property:vold.decrypt=trigger_restart_framework
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
-
-service cnd /system/bin/cnd
-    class late_start
-    socket cnd stream 660 root inet
 
 service irsc_util /system/bin/logwrapper /system/bin/irsc_util "/etc/sec_config"
     class main
