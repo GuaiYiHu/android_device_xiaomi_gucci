@@ -175,7 +175,9 @@ etc/firmware/a300_pfp.fw
 etc/firmware/a300_pm4.fw
 
 # Media
+-framework/qcmediaplayer.jar
 lib/libc2dcolorconvert.so
+lib/libdashplayer.so
 lib/libdivxdrmdecrypt.so
 lib/libOmxAacEnc.so
 lib/libOmxAmrEnc.so
