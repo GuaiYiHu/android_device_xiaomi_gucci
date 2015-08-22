@@ -61,8 +61,6 @@ on init
     symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
 
-    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
-
 on fs
     mount_all fstab.qcom
     mkdir /persist/data 0700 system system
