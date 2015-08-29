@@ -128,6 +128,10 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8916
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
