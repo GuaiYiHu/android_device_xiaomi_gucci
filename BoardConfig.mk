@@ -135,7 +135,7 @@ PROTOBUF_SUPPORTED := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/xiaomi/hm2014811/sepolicy
+    $(LOCAL_PATH)/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file.te \
