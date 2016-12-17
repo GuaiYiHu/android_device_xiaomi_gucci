@@ -1,5 +1,9 @@
 [
   {
+    "repository": "android_vendor_wingtech_wt88047",
+    "target_path": "vendor/wingtech/wt88047"
+  },
+  {
     "repository": "android_device_cyanogen_msm8916-common",
     "target_path": "device/cyanogen/msm8916-common"
   },
