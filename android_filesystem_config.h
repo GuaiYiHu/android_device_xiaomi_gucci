@@ -1,4 +1,5 @@
-# Copyright (c) 2014, The Linux Foundation. All rights reserved.
+/*
+# Copyright (c) 2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,6 +25,13 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
 
-key 116   POWER
-key 114   VOLUME_DOWN
+#include <private/android_filesystem_config.h>
+
+#define NO_ANDROID_FILESYSTEM_CONFIG_DEVICE_DIRS
+ const struct fs_path_config android_device_files[] = {
+      // { 00755, AID_UID,     AID_GID,     (1ULL << CAPABILITY), "PATH_TO_BINARY" },
+      { 00755, AID_SYSTEM,         AID_SYSTEM,         (1ULL << CAP_NET_BIND_SERVICE), "system/bin/imsdatadaemon" },
+      { 00755, AID_SYSTEM,         AID_RADIO,          (1ULL << CAP_NET_BIND_SERVICE), "system/bin/ims_rtp_daemon" },
+};
