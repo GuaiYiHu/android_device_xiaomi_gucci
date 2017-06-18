@@ -26,6 +26,11 @@ LOCAL_SRC_FILES := \
 
 LOCAL_CFLAGS = -Wall -Wextra -Werror
 
+#use media extension
+#ifeq ($(TARGET_USES_MEDIA_EXTENSIONS), true)
+LOCAL_CFLAGS += -DUSE_MEDIA_EXTENSIONS
+#endif
+
 #Debug logs are enabled
 #LOCAL_CFLAGS += -DDISABLE_DEBUG_LOG
 
@@ -57,7 +62,7 @@ LOCAL_CFLAGS += -DUSE_KK_CODE
 endif
 
 #ifeq ($(TARGET_USE_VENDOR_CAMERA_EXT),true)
-#LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/msm8974/libgralloc
+#LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc
 #else
 LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc
 #endif
