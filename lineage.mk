@@ -17,7 +17,7 @@ $(call inherit-product, device/xiaomi/gucci/full_gucci.mk)
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_gucci
+PRODUCT_NAME := lineage_gucci
 BOARD_VENDOR := xiaomi
 PRODUCT_DEVICE := gucci
 
