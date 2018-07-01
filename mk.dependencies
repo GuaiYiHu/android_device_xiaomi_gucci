@@ -6,5 +6,9 @@
   {
     "repository": "android_kernel_wingtech_msm8916",
     "target_path": "kernel/wingtech/msm8916"
+  },
+  {
+    "repository": "android_vendor_wingtech_wt88047",
+    "target_path": "vendor/wingtech/wt88047"
   }
 ]
