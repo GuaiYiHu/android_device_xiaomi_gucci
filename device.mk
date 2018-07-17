@@ -181,7 +181,12 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     qcmediaplayer
-
+    
+# Prebuilt kernel 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/kernel:kernel \
+    $(LOCAL_PATH)/prebuilt/dt.img:dt.img
+    
 # Power HAL
 PRODUCT_PACKAGES += \
     power.msm8916
