@@ -208,11 +208,23 @@ PRODUCT_PACKAGES += \
     init.qcom.coex.sh
 
 PRODUCT_PACKAGES += \
+    init.class_main.sh \
+    init.mdm.sh \
+    init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.factory.sh \
+    init.qcom.sh \
+    init.qcom.ssr.sh \
+    init.qcom.syspart_fixup.sh \
+    init.qcom.usb.sh
+
+PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
-    init.qcom.power.rc \
     init.qcom.usb.rc \
-    init.recovery.qcom.rc \
+    init.qti.carrier.rc \
+    init.recovery.hardware.rc \
+    init.target.rc \
     ueventd.qcom.rc
 
 # RIL
