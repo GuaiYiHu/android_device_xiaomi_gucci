@@ -119,6 +119,10 @@ vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
+# FM
+bin/fm_qsoc_patches
+lib/modules/radio-iris-transport.ko
+
 # GPS
 bin/location-mq
 etc/permissions/com.qualcomm.location.xml

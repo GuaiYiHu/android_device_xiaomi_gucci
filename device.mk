@@ -203,7 +203,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.crda.sh \
     init.qcom.bt.sh \
-    init.qcom.coex.sh
+    init.qcom.coex.sh \
+    init.qcom.fm.sh
 
 PRODUCT_PACKAGES += \
     init.class_main.sh \
