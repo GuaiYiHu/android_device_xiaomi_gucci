@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #set -e
-export DEVICE=hm2014811
+export DEVICE=gucci
 export VENDOR=xiaomi
 
 if [ $# -eq 0 ]; then

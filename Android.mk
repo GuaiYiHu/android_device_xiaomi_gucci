@@ -15,7 +15,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),hm2014811)
+ifeq ($(TARGET_DEVICE),gucci)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
