@@ -141,8 +141,7 @@ PRODUCT_PACKAGES += \
     init.cne.rc \
     init.target.rc \
     init.target.power.rc \
-    init.qcom.usb.rc \
-    memcheck
+    init.qcom.usb.rc
 
 # Prebuilt webview
 PRODUCT_PACKAGES += \

@@ -31,10 +31,6 @@ TARGET_KERNEL_CONFIG := cyanogenmod_wt88047_defconfig
 # CPU
 TARGET_CPU_CORTEX_A53 := true
 
-# WT88047 init
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_wt88047.c
-TARGET_UNIFIED_DEVICE := true
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
@@ -95,7 +91,6 @@ BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-    memcheck.te \
     irsc_util.te \
     mm-qcamerad.te \
     system_server.te \
