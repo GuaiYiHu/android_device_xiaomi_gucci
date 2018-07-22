@@ -144,12 +144,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     memcheck
 
-# Sensor HAL
-PRODUCT_PACKAGES += \
-    calmodule.cfg \
-    libcalmodule_common \
-    sensors.msm8916
-
 # Prebuilt webview
 PRODUCT_PACKAGES += \
     webview
