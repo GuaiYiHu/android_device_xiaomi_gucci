@@ -97,17 +97,9 @@ PRODUCT_PACKAGES += \
     com.qti.dpmframework \
     dpmapi
 
-# IMS
+# Include IMSEnabler
 PRODUCT_PACKAGES += \
-    IMSEnabler \
-    init.qti.ims.sh \
-    ims \
-    imscmlibrary
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/ims/imscm.xml:system/etc/permissions/imscm.xml \
-    $(LOCAL_PATH)/configs/ims/ims.xml:system/etc/permissions/ims.xml \
-    $(LOCAL_PATH)/configs/ims/qti_permissions.xml:system/etc/permissions/qti_permissions.xml
+    IMSEnabler
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
@@ -135,6 +127,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
+    init.qti.ims.sh \
     libqcomvisualizer \
     libqcompostprocbundle \
     fstab.qcom \
