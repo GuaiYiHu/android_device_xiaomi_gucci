@@ -12,16 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/wingtech/wt88047/full_wt88047.mk)
+$(call inherit-product, device/xiaomi/gucci/full_gucci.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := HM2014811,HM2014812,HM2014813,HM2014814,HM2014815,HM2014816,HM2014817,HM2014818,HM2014819,HM2014820,HM2014821,HM2014112
+TARGET_OTA_ASSERT_DEVICE := gucci
 
-PRODUCT_NAME := cm_wt88047
-BOARD_VENDOR := wingtech
-PRODUCT_DEVICE := wt88047
+PRODUCT_NAME := cm_gucci
+BOARD_VENDOR := xiaomi
+PRODUCT_DEVICE := gucci
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+TARGET_VENDOR_PRODUCT_NAME := gucci
+TARGET_VENDOR_DEVICE_NAME := gucci
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE=gucci \
+    PRODUCT_NAME=gucci \
+    BUILD_FINGERPRINT=Xiaomi/gucci/gucci:4.4.4/KTU84P/7.10.12:user/release-keys \
+    PRIVATE_BUILD_DESC="gucci-user 4.4.4 KTU84P 7.10.12 release-keys"

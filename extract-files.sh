@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #set -e
-export DEVICE=wt88047
-export VENDOR=wingtech
+export DEVICE=gucci
+export VENDOR=xiaomi
 
 if [ $# -eq 0 ]; then
   SRC=adb

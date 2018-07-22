@@ -16,6 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),wt88047)
+ifeq ($(TARGET_DEVICE),gucci)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif

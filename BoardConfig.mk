@@ -16,7 +16,7 @@
 FORCE_32_BIT := true
 
 include device/cyanogen/msm8916-common/BoardConfigCommon.mk
-DEVICE_PATH := device/wingtech/wt88047
+DEVICE_PATH := device/xiaomi/gucci
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Bootloader
@@ -25,8 +25,11 @@ TARGET_BOOTLOADER_BOARD_NAME :=
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1
-TARGET_KERNEL_SOURCE := kernel/wingtech/msm8916
-TARGET_KERNEL_CONFIG := cyanogenmod_wt88047_defconfig
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET     := 0x01000000
+TARGET_KERNEL_SOURCE := kernel/xiaomi/gucci
+TARGET_KERNEL_CONFIG := gucci_defconfig
 
 # CPU
 TARGET_CPU_CORTEX_A53 := true
@@ -97,4 +100,4 @@ BOARD_SEPOLICY_UNION += \
     file_contexts
 
 # inherit from the proprietary version
--include vendor/wingtech/wt88047/BoardConfigVendor.mk
+-include vendor/xiaomi/gucci/BoardConfigVendor.mk
