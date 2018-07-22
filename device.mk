@@ -97,10 +97,6 @@ PRODUCT_PACKAGES += \
     com.qti.dpmframework \
     dpmapi
 
-# Include IMSEnabler
-PRODUCT_PACKAGES += \
-    IMSEnabler
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
