@@ -4,6 +4,10 @@ PRODUCT_PACKAGES += \
     libmm-qcamera \
     Snap
 
+# BoringSSL Hacks
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # Build libstlport for vendor blobs
 PRODUCT_PACKAGES += \
     libstlport
