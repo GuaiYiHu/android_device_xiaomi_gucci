@@ -56,6 +56,11 @@ on boot
     chown root /sys/class/power_supply/battery/voltage_now
     chmod 0664 /sys/class/power_supply/battery/current_now
     chmod 0664 /sys/class/power_supply/battery/voltage_now
+    
+    #  KeyDisabler
+    chown root system /sys/bus/i2c/drivers/atmel_mxt_ts/5-004a/keys_off
+    chmod 0664 /sys/bus/i2c/drivers/atmel_mxt_ts/5-004a/keys_off
+    restorecon /sys/bus/i2c/drivers/atmel_mxt_ts/5-004a/keys_off
 
     # MPU6050 accelerometer
     chown system system /sys/class/sensors/MPU6050-accel/calibrate
