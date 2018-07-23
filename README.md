@@ -1,5 +1,2 @@
-Device configuration for Redmi 2
+Device configuration for HM NOTE 1S (gucci)
 ==============================
-This device tree supports:
-
-    redmi2 (wt88047 variant)
