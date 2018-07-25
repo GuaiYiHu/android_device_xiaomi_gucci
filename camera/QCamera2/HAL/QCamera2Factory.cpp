@@ -157,8 +157,6 @@ int QCamera2Factory::cameraDeviceOpen(int camera_id,
                     struct hw_device_t **hw_device)
 {
     int rc = NO_ERROR;
-    int cameraretry = 0;
-
     if (camera_id < 0 || camera_id >= mNumOfCameras)
         return BAD_VALUE;
 
@@ -167,17 +165,7 @@ int QCamera2Factory::cameraDeviceOpen(int camera_id,
         ALOGE("Allocation of hardware interface failed");
         return NO_MEMORY;
     }
-
-    while (cameraretry < 3) {
-        rc = hw->openCamera(hw_device);
-        if (rc == NO_ERROR)
-            break;
-
-        cameraretry++;
-        ALOGV("%s: open failed - retrying attempt %d",__FUNCTION__, cameraretry);
-        sleep(2);
-    }
-
+    rc = hw->openCamera(hw_device);
     if (rc != NO_ERROR) {
         delete hw;
     }
