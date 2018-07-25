@@ -1,15 +1,15 @@
 [
   {
-    "repository": "android_vendor_wingtech_wt88047",
-    "target_path": "vendor/wingtech/wt88047"
+    "repository": "android_vendor_xiaomi_gucci",
+    "target_path": "vendor/xiaomi/gucci"
   },
   {
     "repository": "android_device_cyanogen_msm8916-common",
     "target_path": "device/cyanogen/msm8916-common"
   },
   {
-    "repository": "android_kernel_wingtech_msm8916",
-    "target_path": "kernel/wingtech/msm8916"
+    "repository": "android_kernel_xiaomi_gucci",
+    "target_path": "kernel/xiaomi/gucci"
   },
   {
     "repository": "android_external_stlport",
