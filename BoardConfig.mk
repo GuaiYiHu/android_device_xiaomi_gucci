@@ -61,6 +61,9 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/gucci
 TARGET_KERNEL_CONFIG := gucci_defconfig
 BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1
 
+# Keymaster
+TARGET_PROVIDES_KEYMASTER := true
+
 # Power
 TARGET_HAS_NO_POWER_STATS := true
 
