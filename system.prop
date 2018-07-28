@@ -7,7 +7,6 @@ persist.vendor.audio.fluence.speaker=false
 # Camera
 persist.camera.cpp.duplication=false
 persist.camera.hal.debug.mask=0
-ro.camera.sensors=ov8865_q8v18a,ov2680_skuhf,ov2680_5987fhq
 
 # Display
 ro.sf.lcd_density=320
