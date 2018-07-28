@@ -80,3 +80,6 @@ on boot
     chmod 0664 /sys/bus/i2c/devices/i2c-0/0-0023/poll_delay
     chmod 0664 /sys/bus/i2c/devices/i2c-0/0-000c/enable_mag
     chmod 0664 /sys/bus/i2c/devices/i2c-0/0-000c/delay_mag
+
+on property:init.svc.qcamerasvr=running
+    restart cameraserver
