@@ -19,5 +19,4 @@
 
 #define BTM_DEF_LOCAL_NAME   "HM NOTE 1S"
 #define BLUETOOTH_QTI_SW TRUE
-#define BLE_VND_INCLUDED   TRUE
 #endif
