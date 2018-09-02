@@ -66,7 +66,7 @@ BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_PROVIDES_KEYMASTER := true
 
 # Lineage Hardware
-BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/lineagehw
+JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
 
 # Power
 TARGET_HAS_NO_POWER_STATS := true
