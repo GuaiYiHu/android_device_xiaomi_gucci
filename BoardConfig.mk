@@ -65,8 +65,8 @@ BOARD_RAMDISK_OFFSET     := 0x01000000
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
-# MK Hardware
-BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/mkhw
+# LineaMKge Hardware
+JAVA_SOURCE_OVERLAYS := org.mokee.hardware|$(DEVICE_PATH)/mkhw|**/*.java
 
 # Power
 TARGET_HAS_NO_POWER_STATS := true
