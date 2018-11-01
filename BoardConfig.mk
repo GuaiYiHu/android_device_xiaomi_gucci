@@ -65,8 +65,8 @@ BOARD_RAMDISK_OFFSET     := 0x01000000
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
-# MK Hardware
-BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/mkhw
+# Lineage Hardware
+BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/lineagehw
 
 # Power
 TARGET_HAS_NO_POWER_STATS := true

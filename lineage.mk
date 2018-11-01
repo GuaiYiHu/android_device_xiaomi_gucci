@@ -16,7 +16,7 @@
 $(call inherit-product, device/xiaomi/gucci/full_gucci.mk)
 
 # Inherit some common MK stuff.
-$(call inherit-product, vendor/mk/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
@@ -24,7 +24,7 @@ TARGET_BOARD_PLATFORM_VARIANT := msm8916
 # Assert
 TARGET_OTA_ASSERT_DEVICE := gucci
 
-PRODUCT_NAME := mk_gucci
+PRODUCT_NAME := lineage_gucci
 BOARD_VENDOR := xiaomi
 PRODUCT_DEVICE := gucci
 
